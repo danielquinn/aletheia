@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+file="test.jpg"
+
+cat ${file} \
+  | exiftool -s -s -s -ImageSupplierImageID - \
+  | base64 -d \
+  > ${file}.sig
+
+echo "Signature file created"
+
+# Users would have to download and import your key by pulling the location from
+# the ImageSupplierID record in the file
+#
+# curl $(cat ${file} | exiftool -s -s -s -ImageSupplierID -) > alethia-example.pub
+# gpg --import example.com.pub
+
+cat ${file} \
+  | exiftool -all= - \
+  | gpg --verify ${file}.sig -

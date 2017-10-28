@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+original_file="../syntax.jpg"
+file="test.jpg"
+
+cp ${original_file} ${file}
+
+signature=$(cat ${file} \
+  | exiftool -all= - \
+  | gpg --output - --detach-sign - \
+  | base64 -w 0 \
+  | xargs)
+
+echo "Signature generated: ${signature}"
+
+exiftool -ImageSupplierImageID=${signature} -overwrite_original ${file}
+exiftool -ImageSupplierID=https://example.com/alethia.pub -overwrite_original ${file}
+
+echo "Our signed version should now be different from the original"
+md5sum ${file} ${original_file}
