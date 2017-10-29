@@ -5,15 +5,19 @@
 #
 #   from aletheia import generate, sign, verify
 #
-#   generate(path)
-#   sign(path, key, public_key_url)
-#   verify(path, key)
+#   generate()
+
+#   sign(path, public_key_url)
+#   sign_bulk(paths, public_key_url)
+
+#   verify(path)
+#   verify_bulk(paths)
 #
 # Command line API:
 #
-#   $ aletheia generate path
-#   $ aletheia sign /path/to/file /path/to/key
-#   $ aletheia verify /path/to/file /path/to/key
+#   $ aletheia generate
+#   $ aletheia sign /path/to/file public-key-url
+#   $ aletheia verify /path/to/file
 #
 
 import argparse
