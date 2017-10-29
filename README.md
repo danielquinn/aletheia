@@ -77,3 +77,23 @@ $ cat file.jpg \
   | exiftool -all= - \
   | gpg --verify file.sig -
 ```
+
+
+## Roadmap
+
+This is meant to be a collaborative project, since frankly, I don't have all of
+the skills required to make this work on as broad a scale as I'd like it to.
+
+1. A proof of concept using GPG and a couple Bash scripts ✅
+2. A fully functional Python library that can:
+    * Create a pair of keys or use existing ones
+    * Sign a JPEG image
+    * Verify a signed JPEG image
+3. Support additional formats.  High priorities include `gif`, `png`, `mkv`,
+   `mp4`, and `mp3` -- assuming these formats have a metadata layer into which
+   we can include a signature.
+4. A proper spec outlining what's required for compliance.  *I could really use
+   some help on this from someone with some experience in this area*.
+5. Invite others to write their own libraries in other languages/frameworks.
+   Ideally, I'd like to see Alethia implemented in Python, Ruby, Javascript,
+   PHP, Rust, and Go.
