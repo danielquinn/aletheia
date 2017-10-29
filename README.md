@@ -29,54 +29,22 @@ utility coupled with [GPG](https://www.gnupg.org/):
 #### Generate a signature
 
 ```bash
-signature=$(cat file.jpg \
-  | exiftool -all= - \
-  | gpg --output - --detach-sign - \
-  | base64 -w 0 \
-  | xargs)
+$ python aletheia.py sign file.jpg https://example.com/my-public-key.pub
 ```
 
-Here we use Exiftool to get the image data (sans metadata), sign it with GPG,
-convert it to base64 so we can later write it to the file, and then use `xargs`
-to strip the surrounding white space.
-
-#### Write that signature to the media file
-
-```bash
-exiftool -ImageSupplierImageID=${signature} file.jpg
-```
-
-#### Write the URL to your public key to the media file
-
-```bash
-exiftool -ImageSupplierID=https://example.com/aletheia.pub file.jpg
-```
+Here we use Exiftool to get the image data (sans metadata), sign it with our,
+private key, convert the signature to base64, and again use Exiftool to write
+the new signature to the file along with the location of our public key
 
 ### Verifying your media files
 
-#### Get the signatures
-
 ```bash
-$ cat file.jpg \
-  | exiftool -s -s -s -ImageSupplierImageID - \
-  | base64 -d \
-  > file.sig
+$ python aletheia.py verify file.jpg
 ```
 
-#### Get the public key
-
-```bash
-$ curl $(cat file.jpg | exiftool -s -s -s -ImageSupplierID -) > example.com.pub
-$ gpg --import example.com.pub
-```
-
-#### Verify the file
-
-```bash
-$ cat file.jpg \
-  | exiftool -all= - \
-  | gpg --verify file.sig -
-```
+This extracts the signature & URL from the file, fetches the public key from
+the URL, caches it, and then attempts to verify the signature on the file with
+said public key.
 
 
 ## Roadmap
@@ -84,11 +52,12 @@ $ cat file.jpg \
 This is meant to be a collaborative project, since frankly, I don't have all of
 the skills required to make this work on as broad a scale as I'd like it to.
 
-1. A proof of concept using GPG and a couple Bash scripts ✅
-2. A fully functional Python library that can:
-    * Create a pair of keys or use existing ones
-    * Sign a JPEG image
-    * Verify a signed JPEG image
+1. A [proof of concept](https://github.com/danielquinn/aletheia/tree/master/proof-of-concept)
+   using GPG and a couple Bash scripts ✅
+2. A fully functional [Python library](https://github.com/danielquinn/aletheia/tree/master/python/aletheia.py) that can:
+    * Create a pair of keys or use existing ones ✅
+    * Sign a JPEG image ✅
+    * Verify a signed JPEG image ✅
 3. Support additional formats.  High priorities include `gif`, `png`, `mkv`,
    `mp4`, and `mp3` -- assuming these formats have a metadata layer into which
    we can include a signature.
