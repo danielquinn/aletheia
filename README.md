@@ -64,5 +64,5 @@ the skills required to make this work on as broad a scale as I'd like it to.
 4. A proper spec outlining what's required for compliance.  *I could really use
    some help on this from someone with some experience in this area*.
 5. Invite others to write their own libraries in other languages/frameworks.
-   Ideally, I'd like to see Alethia implemented in Python, Ruby, Javascript,
+   Ideally, I'd like to see Aletheia implemented in Python, Ruby, Javascript,
    PHP, Rust, and Go.
