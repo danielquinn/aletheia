@@ -55,7 +55,7 @@ Here we use Exiftool to get the image data (sans metadata), sign it with our,
 private key, convert the signature to base64, and again use Exiftool to write
 the new signature to the file along with the location of our public key
 
-### Verifying your media files
+#### Verifying your media files
 
 ```bash
 $ aletheia verify file.jpg
