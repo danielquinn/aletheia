@@ -79,7 +79,7 @@
         <section>
           <h1>Aletheia</h1>
           <p style="text-align: left; width: 40%; margin-left: 50%;"><small>
-            <i class="fa fa-twitter"></i> &nbsp; <a class="nocolour" href="https://twitter.com/danielagquinn">@daniel<strong>ag</strong>quinn</a><br>
+            <i class="fa fa-twitter"></i> &nbsp; <a class="nocolour" href="https://twitter.com/danielagquinn">danielagquinn</a><br>
             <i class="fa fa-github"></i> &nbsp; <a class="nocolour" href="https://github.com/danielquinn">danielquinn</a><br>
             <i class="fa fa-globe"></i> &nbsp; <a class="nocolour" href="https://danielquinn.org/">danielquinn.org</a>
           </small></p>
@@ -89,8 +89,8 @@
           <section>
             <h2>Inspiration</h2>
             <p>
-              I should probably start this<br />
-              with why I started it in the first place.
+              I should probably start with<br />
+              with why I started Aletheia in the first place.
             </p>
             <img src="img/logos/radiolab.png" style="width: 30%;"/>
           </section>
@@ -165,9 +165,56 @@
         </section>
 
         <section>
+          <h2>How it Works</h2>
           <section>
-            <h2>How</h2>
             <p>Now with diagrams!</p>
+          </section>
+          <section>
+            <h3>[ Signing ]</h3>
+          </section>
+          <section>
+            <br />
+            <p>Here's what a file typically looks like</p>
+            <img src="img/diagrams/sign-structure.png" />
+          </section>
+          <section>
+            <br />
+            <p>Aletheia pulls the body of the file out and generates a signature of it with your private key</p>
+            <img src="img/diagrams/sign-read.png" />
+          </section>
+          <section>
+            <br />
+            <p>Tack the signature onto the header,<br /> along with where to find the public key</p>
+            <img src="img/diagrams/sign-write.png" />
+          </section>
+          <section>
+            <br />
+            <p>The resulting file is a <em>little</em> bigger,<br />but now contains the origin</p>
+            <img src="img/diagrams/sign-final.png" />
+          </section>
+          <section>
+            <h3>[ Verification ]</h3>
+          </section>
+          <section>
+            <br />
+            <p>Extract the key URL and signature from the header</p>
+            <img src="img/diagrams/verify-extract.png" />
+          </section>
+          <section>
+            <br />
+            <p>Fetch the key from that URL.</p>
+            <img src="img/diagrams/verify-fetch.png" />
+          </section>
+          <section>
+            <br />
+            <p>Use the key to verify the signature against the file body</p>
+            <img src="img/diagrams/verify-final.png" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>A Story</h2>
+            <p>Details are annoying. Let's see an example.</p>
           </section>
           <section class="diagram">
             <img src="img/diagrams/nyt.png" />
@@ -187,8 +234,11 @@
           </section>
           <section>
             <h3>A working Python library</h3>
-            <pre><code>$ pip install pyletheia</code></pre>
-            <p>Currently only supports JPEG images</p>
+            <img src="img/logos/pypi.png" />
+            <pre><code>
+              $ pip install pyletheia
+            </code></pre>
+            <p>Currently supports JPEG &amp; MP3 files</p>
             <p>...but it's properly extensible</p>
           </section>
           <section>
@@ -196,6 +246,12 @@
             <pre><code>
               $ aletheia sign /path/to/image.jpg
               $ aletheia verify /path/to/image.jpg
+            </code></pre>
+          </section>
+          <section>
+            <h3>An example site</h3>
+            <pre><code>
+              $ curl https://danielquinn.org/aletheia.pub
             </code></pre>
           </section>
         </section>
@@ -210,13 +266,27 @@
             <h3>Next Steps</h3>
           </section>
           <section>
-            <h2>Extending the library</h2>
+            <h2>Extending</h2>
             <p>It should support the popular formats:</p>
             <ul>
               <li>webm</li>
               <li>mkv</li>
-              <li>mp3</li>
+              <li>mp4</li>
               <li>suggestions?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Porting</h2>
+            <p>Not everyone uses Python</p>
+            <ul>
+              <li>Ruby</li>
+              <li>Javascript</li>
+              <li>PHP</li>
+              <li>Java</li>
+              <li>Rust</li>
+              <li>Clojure</li>
+              <li>Go</li>
+              <li>C#</li>
             </ul>
           </section>
           <section>
@@ -230,10 +300,6 @@
               <li>Homebrew</li>
               <li>Whatever it is Windows uses</li>
             </ul>
-          </section>
-          <section>
-            <h3>An example site</h3>
-            <pre><code>$ curl https://danielquinn.org/aletheia.pub</code></pre>
           </section>
         </section>
 
