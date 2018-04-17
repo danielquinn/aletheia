@@ -74,14 +74,14 @@ the skills required to make this work on as broad a scale as I'd like it to.
 
 1. A [proof of concept](https://github.com/danielquinn/aletheia/tree/master/proof-of-concept)
    using GPG and a couple Bash scripts ✅
-2. A fully functional [Python library](https://github.com/danielquinn/pyletheia/)
+2. A fully functional [Python library](https://pypi.org/project/aletheia/)
    that can:
     * Create a pair of keys or use existing ones ✅
     * Sign & verify a JPEG image ✅
     * Sign & verify an MP3 file ✅
-3. Support additional formats.  High priorities include `gif`, `png`, `mkv`,
-   and `mp4` -- assuming these formats have a metadata layer into which
-   we can include a signature.
+3. Support additional formats.  Priorities include `gif`, `mkv`, webm, and
+   `mp4` -- assuming these formats have a metadata layer into which we can
+   include a signature.
 4. A proper spec outlining what's required for compliance.  *I could really use
    some help on this from someone with some experience in this area*.
 5. Invite others to write their own libraries in other languages/frameworks.
