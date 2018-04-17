@@ -1,4 +1,5 @@
 # Aletheia
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
 A means of signing media files
 
