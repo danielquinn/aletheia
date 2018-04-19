@@ -23,36 +23,36 @@ covering how surprisingly easy it is to create believable audio & video fakes.
 
 This is a typical media file
 
-![A basic file](presentation/img/diagrams/sign-structure.png)
+<p align="center"><img src="presentation/img/diagrams/sign-structure.png" alt="A basic file" /></p>
 
 Aletheia uses your private key to sign the relevant portion of the file:
 
-![Signing with a private key](presentation/img/diagrams/sign-read.png)
+<p align="center"><img src="presentation/img/diagrams/sign-read.png" alt="Signing with a private key" /></p>
 
 That signature is inserted into the file header, along with the URL for the
 public key:
 
-![Writing the headers](presentation/img/diagrams/sign-write.png)
+<p align="center"><img src="presentation/img/diagrams/sign-write.png" alt="Writing the headers" /></p>
 
 The final result is a slightly larger file, now with a means of verifying its
 origin.
 
-![A basic file](presentation/img/diagrams/sign-final.png)
+<p align="center"><img src="presentation/img/diagrams/sign-final.png" alt="A basic file" /></p>
 
 ### Verification
 
 When it comes time to verify the file, you only need to extract the public key
 URL:
 
-![Extract the public key URL](presentation/img/diagrams/verify-extract.png)
+<p align="center"><img src="presentation/img/diagrams/verify-extract.png" alt="Extract the public key URL" /></p>
 
 ...and fetch that key from the creator's site:
 
-![Fetch the public key](presentation/img/diagrams/verify-fetch.png)
+<p align="center"><img src="presentation/img/diagrams/verify-fetch.png" alt="Fetch the public key" /></p>
 
 Finally, we use the public key to verify the file:
 
-![Verify all the things!](presentation/img/diagrams/verify-final.png)
+<p align="center"><img src="presentation/img/diagrams/verify-final.png" alt="Verify all the things!" /></p>
 
 Aletheia will do all of this for you in two commands: `sign`, and `verify`.
 
@@ -123,14 +123,18 @@ widely adopted however, more needs to be done.  Here's what we have so far:
 We now have a working [Python library](https://pypi.org/project/aletheia/) that
 can generate keys as well as support the following file formats:
 
+<center>
+
 Format | Sign  | Verify
 ------ | :---: | :---:
-JPEG   | 👍 | 👍
-MP3    | 👍 | 👍
-GIF    | ❌    | ❌
-MKV    | ❌    | ❌
-MP4    | ❌    | ❌
+JPEG   |  👍   | 👍
+MP3    |  👍   | 👍
+GIF    |  ❌   | ❌
+MKV    |  ❌   | ❌
+MP4    |  ❌   | ❌
+WEBM   |  ❌   | ❌
 
+</center>
 
 ### Help Wanted
 
