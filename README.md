@@ -123,8 +123,6 @@ widely adopted however, more needs to be done.  Here's what we have so far:
 We now have a working [Python library](https://pypi.org/project/aletheia/) that
 can generate keys as well as support the following file formats:
 
-<center>
-
 Format | Sign  | Verify
 ------ | :---: | :---:
 JPEG   |  👍   | 👍
@@ -133,8 +131,6 @@ GIF    |  ❌   | ❌
 MKV    |  ❌   | ❌
 MP4    |  ❌   | ❌
 WEBM   |  ❌   | ❌
-
-</center>
 
 ### Help Wanted
 
