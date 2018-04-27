@@ -340,6 +340,14 @@
         backgroundTransition: 'fade',
         loop: true,
 
+        // Hack for my clicker
+        keyboard: {
+          37: 'prev',
+          38: 'prev',
+          39: 'next',
+          40: 'next'
+        },
+
         // Optional reveal.js plugins
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
