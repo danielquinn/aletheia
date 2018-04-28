@@ -189,49 +189,49 @@
 
         <section>
           <h2>How it Works</h2>
-          <section>
+          <section data-transition="slide">
             <p>Now with diagrams!</p>
             <aside class="notes">
               <p>So that's the problem, let's talk about a solution.</p>
             </aside>
           </section>
-          <section>
+          <section data-transition="slide">
             <h3>[ Signing ]</h3>
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Here's what a file typically looks like</p>
             <img src="img/diagrams/sign-structure.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Aletheia pulls the body of the file out and generates a signature of it with your private key</p>
             <img src="img/diagrams/sign-read.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Tack the signature onto the header,<br /> along with where to find the public key</p>
             <img src="img/diagrams/sign-write.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>The resulting file is a <em>little</em> bigger,<br />but now contains the origin</p>
             <img src="img/diagrams/sign-final.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <h3>[ Verification ]</h3>
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Extract the key URL and signature from the header</p>
             <img src="img/diagrams/verify-extract.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Fetch the key from that URL.</p>
             <img src="img/diagrams/verify-fetch.png" />
           </section>
-          <section>
+          <section data-transition="slide">
             <br />
             <p>Use the key to verify the signature against the file body</p>
             <img src="img/diagrams/verify-final.png" />
