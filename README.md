@@ -1,5 +1,5 @@
 # Aletheia
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
+[![Python3](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
 Fight fake news with cryptographic signatures
 
