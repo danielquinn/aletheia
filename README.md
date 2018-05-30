@@ -165,10 +165,17 @@ can generate keys as well as support the following file formats:
 
 #### Support for additional formats.
 
-The lowest-hanging fruit, JPEG images & MP3s are finished, so now the
-priorities are the other popular web formats like `gif`, `mkv`, `webm`, and
-`mp4` -- assuming these formats have a metadata layer into which we can include
-a signature.
+The lowest-hanging fruit, JPEGs, MP3s, and MP4s are finished, so now the
+priorities are the other popular web formats like `gif`, `mkv`, and `webm` --
+assuming these formats have a metadata layer into which we can include a
+signature.
+
+In the case of MKV & Webm, the process of acquiring the "raw data" is done
+(it's the same process as MP3 & MP4), but actually writing the headers isn't
+supported by [mutagen](https://pypi.org/project/mutagen/), the library Aletheia
+uses to write metadata to files.  This means that if we want to support these
+formats, we need alternatives for writing those headers.  Ideas/suggestions are
+much appreciated.
 
 #### Whitepaper
 
