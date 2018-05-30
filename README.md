@@ -156,8 +156,8 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>MP4</td>
-      <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
+      <td align="center">👍</td>
    </tr>
 </table>
 
