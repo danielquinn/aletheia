@@ -159,6 +159,26 @@ can generate keys as well as support the following file formats:
       <td align="center">👍</td>
       <td align="center">👍</td>
    </tr>
+   <tr>
+      <td>HTML</td>
+      <td align="center">❌</td>
+      <td align="center">❌</td>
+   </tr>
+   <tr>
+      <td>Markdown</td>
+      <td align="center">❌</td>
+      <td align="center">❌</td>
+   </tr>
+   <tr>
+      <td>ReStructuredText</td>
+      <td align="center">❌</td>
+      <td align="center">❌</td>
+   </tr>
+   <tr>
+      <td>PDF</td>
+      <td align="center">❌</td>
+      <td align="center">❌</td>
+   </tr>
 </table>
 
 ### Help Wanted
