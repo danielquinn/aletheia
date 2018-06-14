@@ -1,17 +1,23 @@
 # Aletheia
 [![Python3](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
-Fight fake news with cryptographic signatures
+Fight fake news with cryptography & human nature
 
-Aletheia uses public key signing techniques in an effort to combat fake news.
-The idea is that rather than employing expensive AI techniques to detect fakes,
-we can leverage existing human-based networks of trust and use cryptography to
-sign images, audio, and video so that **trust** becomes associated with the
-*origin of the file* rather than its content.
+Just as journalism has taken a critical financial hit, fake news is multiplying
+across social networks faster than facts. The public doesn't know which stories
+are real any more because anyone with a laptop can forge audio & video in
+record time. We need to empower the institutions we trust with the ability to
+tie their reputations to the journalism they produce.
 
-To that end, we sign all media we produce so that it can be verified as coming 
-from us.  After that, it's only our personal (or professional) reputations that
-can be called into question.
+Aletheia uses cryptographic signatures + DNS to leverage existing networks of
+human trust in individual journalists & institutions to help link those people
+to the work they produce with a view to change our expectations of what
+constitutes journalism: if it's not verified, it's just some stranger on the
+internet.
+
+To this end, Aletheia lets you sign all media you produce so that it can
+be verified as coming from you.  After that, it's only our personal (or
+professional) reputations that can be called into question.
 
 This is further outlined in this [blog post](https://danielquinn.org/blog/public-key-authentication-for-media-files-why-isnt-this-a-thing/)
 on the subject.  This project is inspired by this [Radiolab story](http://futureoffakenews.com/videos.html)
