@@ -167,8 +167,8 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>HTML</td>
-      <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
+      <td align="center">👍</td>
    </tr>
    <tr>
       <td>Markdown</td>
