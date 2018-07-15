@@ -152,13 +152,13 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>MKV</td>
-      <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
+      <td align="center">👍</td>
    </tr>
    <tr>
       <td>WEBM</td>
-      <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
+      <td align="center">👍</td>
    </tr>
    <tr>
       <td>MP4</td>
