@@ -1,4 +1,5 @@
 # Aletheia
+
 [![Python3](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
 Fight fake news with cryptography & human nature
@@ -23,7 +24,9 @@ This is further outlined in this [blog post](https://danielquinn.org/blog/public
 on the subject.  This project is inspired by this [Radiolab story](http://futureoffakenews.com/videos.html)
 covering how surprisingly easy it is to create believable audio & video fakes.
 
+
 ## Visuals
+
 
 ### Signing
 
@@ -44,6 +47,7 @@ The final result is a slightly larger file, now with a means of verifying its
 origin.
 
 <p align="center"><img src="presentation/img/diagrams/sign-final.png" alt="A basic file" /></p>
+
 
 ### Verification
 
@@ -70,7 +74,9 @@ publish their public key somewhere on the internet and use their private key to
 sign the media they distribute.  Social networks and individuals can then
 reference this signature to verify the origin.
 
+
 ### Signing your media files
+
 
 #### Generate a private & public key
 
@@ -91,6 +97,7 @@ private key, it can be verified by reading the public key at that
 URL.
 ```
 
+
 #### Generate a signature
 
 ```bash
@@ -104,6 +111,7 @@ Here, the `aletheia` program:
 3. Converts the signature to text
 4. Writes the new signature to the file along with the location of our public
    key.
+
 
 #### Verifying your media files
 
@@ -123,6 +131,7 @@ Much like signing, `aletheia` is doing all the work for you:
 Aletheia is working, and ready to be deployed on sites running Python, or ones
 happy to use the Python-based command-line script.  In order for it to be
 widely adopted however, more needs to be done.  Here's what we have so far:
+
 
 ### Ready
 
@@ -187,21 +196,16 @@ can generate keys as well as support the following file formats:
    </tr>
 </table>
 
+
 ### Help Wanted
+
 
 #### Support for additional formats.
 
-The lowest-hanging fruit, JPEGs, MP3s, and MP4s are finished, so now the
-priorities are the other popular web formats like `gif`, `mkv`, and `webm` --
-assuming these formats have a metadata layer into which we can include a
-signature.
+The lowest-hanging fruit are finished, so now the priorities are the other
+popular web formats like `gif`, `png`, and maybe `av1` -- assuming these
+formats have a metadata layer into which we can include a signature.
 
-In the case of MKV & Webm, the process of acquiring the "raw data" is done
-(it's the same process as MP3 & MP4), but actually writing the headers isn't
-supported by [mutagen](https://pypi.org/project/mutagen/), the library Aletheia
-uses to write metadata to files.  This means that if we want to support these
-formats, we need alternatives for writing those headers.  Ideas/suggestions are
-much appreciated.
 
 #### Whitepaper
 
@@ -209,6 +213,7 @@ This project has working code & tests, but lacks a proper spec outlining what's
 required for compliance -- the sort of document other developers might follow
 to port the functionality to other languages.  *I could really use some help on
 this from someone with some experience in this area*.
+
 
 #### Porting the Python library to additional languages
 
