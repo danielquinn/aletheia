@@ -16,9 +16,11 @@ to the work they produce with a view to change our expectations of what
 constitutes journalism: if it's not verified, it's just some stranger on the
 internet.
 
-To this end, Aletheia lets you sign all media you produce so that it can
-be verified as coming from you.  After that, it's only our personal (or
-professional) reputations that can be called into question.
+To this end, Aletheia combines cryptographic signatures with human nature's
+concept of social trust.  It helps you sign all the files you produce so that
+they can later be verified as coming from you.  At that point, math has
+guaranteed the file's origin, it's only our personal (or professional)
+reputations that can be called into question.
 
 This is further outlined in this [blog post](https://danielquinn.org/blog/public-key-authentication-for-media-files-why-isnt-this-a-thing/)
 on the subject.  This project is inspired by this [Radiolab story](http://futureoffakenews.com/videos.html)
@@ -30,7 +32,7 @@ covering how surprisingly easy it is to create believable audio & video fakes.
 
 ### Signing
 
-This is a typical media file
+This is a typical file
 
 <p align="center"><img src="presentation/img/diagrams/sign-structure.png" alt="A basic file" /></p>
 
@@ -51,7 +53,7 @@ origin.
 
 ### Verification
 
-When it comes time to verify the file, you only need to extract the public key
+When it comes time to verify the file, you need only extract the public key
 URL:
 
 <p align="center"><img src="presentation/img/diagrams/verify-extract.png" alt="Extract the public key URL" /></p>
@@ -60,11 +62,16 @@ URL:
 
 <p align="center"><img src="presentation/img/diagrams/verify-fetch.png" alt="Fetch the public key" /></p>
 
-Finally, we use the public key to verify the file:
+Finally, we use this public key to verify the file:
 
 <p align="center"><img src="presentation/img/diagrams/verify-final.png" alt="Verify all the things!" /></p>
 
+---
+
 Aletheia will do all of this for you in two commands: `sign`, and `verify`.
+
+If you'd like to get started, you can [install Aletheia from PyPi now](https://pypi.org/project/aletheia/).
+If however you're looking for a more technical explanation, keep reading.
 
 
 ## A technical explanation
@@ -75,10 +82,7 @@ sign the media they distribute.  Social networks and individuals can then
 reference this signature to verify the origin.
 
 
-### Signing your media files
-
-
-#### Generate a private & public key
+### Generate a private & public key
 
 Generating a private & public key is necessary for the signing & verification
 process, but this only needs to be run once.
@@ -98,7 +102,7 @@ URL.
 ```
 
 
-#### Generate a signature
+### Sign a file
 
 ```bash
 $ aletheia sign file.jpg https://example.com/my-public-key.pub
@@ -107,13 +111,13 @@ $ aletheia sign file.jpg https://example.com/my-public-key.pub
 Here, the `aletheia` program:
 
 1. Gets the image data (sans metadata)
-2. Signs it with our private key
+2. Generates a signature by combining it with our private key
 3. Converts the signature to text
 4. Writes the new signature to the file along with the location of our public
    key.
 
 
-#### Verifying your media files
+### Verifying a file
 
 ```bash
 $ aletheia verify file.jpg
@@ -138,61 +142,86 @@ widely adopted however, more needs to be done.  Here's what we have so far:
 We now have a working [Python library](https://pypi.org/project/aletheia/) that
 can generate keys as well as support the following file formats:
 
+
+### Images
+
 <table style="margin: 0 auto;">
    <tr>
       <th>Format</th>
-      <th>Sign</th>
-      <th>Verify</th>
+      <th>Supported</th>
+      <th>Notes</th>
+   </tr>
+   <tr>
+      <th colspan="3">Images</th>
    </tr>
    <tr>
       <td>JPEG</td>
       <td align="center">👍</td>
-      <td align="center">👍</td>
-   </tr>
-   <tr>
-      <td>MP3</td>
-      <td align="center">👍</td>
-      <td align="center">👍</td>
+      <td></td>
    </tr>
    <tr>
       <td>GIF</td>
       <td align="center">❌</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>PNG</td>
       <td align="center">❌</td>
+      <td></td>
+   </tr>
+   <tr>
+      <th colspan="3">Audio</th>
+   </tr>
+   <tr>
+      <td>MP3</td>
+      <td align="center">👍</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+   </tr>
+   <tr>
+      <th colspan="3">Video</th>
    </tr>
    <tr>
       <td>MKV</td>
       <td align="center">👍</td>
-      <td align="center">👍</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
       <td>WEBM</td>
       <td align="center">👍</td>
-      <td align="center">👍</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
       <td>MP4</td>
       <td align="center">👍</td>
-      <td align="center">👍</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+   </tr>
+   <tr>
+      <th colspan="3">Other</th>
    </tr>
    <tr>
       <td>HTML</td>
       <td align="center">👍</td>
-      <td align="center">👍</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
       <td>Markdown</td>
       <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
       <td>ReStructuredText</td>
       <td align="center">❌</td>
-      <td align="center">❌</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
       <td>PDF</td>
       <td align="center">❌</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+   </tr>
+   <tr>
+      <td>TAR</td>
       <td align="center">❌</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
 </table>
 
@@ -207,16 +236,8 @@ popular web formats like `gif`, `png`, and maybe `av1` -- assuming these
 formats have a metadata layer into which we can include a signature.
 
 
-#### Whitepaper
-
-This project has working code & tests, but lacks a proper spec outlining what's
-required for compliance -- the sort of document other developers might follow
-to port the functionality to other languages.  *I could really use some help on
-this from someone with some experience in this area*.
-
-
 #### Porting the Python library to additional languages
 
 Python is great, but it's not for everyone.  Ideally, it would great if
 developers in languages like Ruby, Javascript, PHP, Java, Rust, Clojure, Go,
-and C# could use aletheia in their chosen environment.
+and C# could use Aletheia in their chosen environment.
