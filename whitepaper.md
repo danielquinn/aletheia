@@ -20,7 +20,7 @@ but one that exists paradoxically in a time when legitimate news sources are
 finding it more and more difficult to survive:
 
 * Large organisations with seasoned reporters, field offices, and fact checkers
-  are being squeezed out by unsourced bloggers with a fact checking staff of
+  are being squeezed out by unsourced bloggers with a fact checking budget of
   zero.
 * New technologies that allow for the alteration of still images, audio and
   video are becoming more and more affordable to the broader public leading to
@@ -62,9 +62,9 @@ approach of course is three fold:
 
 Aletheia leverages our natural method for fake detection: *reputation*.
 
-Rather than attempting to analyse the data presented, we verify the origin of
+> **Rather than attempting to analyse the data presented, we verify the origin of
 that data and allow the public to decide whether that source can/should be
-trusted.
+trusted.**
 
 By way of example, consider a case where the BBC were to run a story with a
 video of the British Prime Minister threatening war with the rest of European
@@ -111,11 +111,12 @@ no space to get into it all here.  Instead, here's all you really need to know
 at this stage:
 
 1. You create a pair of "key" files: one public, and one private
-2. You keep the private key to yourself, and you share the public key with everyone.
+2. You keep the private key to yourself, and you share the public key with
+   everyone.
 3. You "sign" a file with your private key.
 4. The world can then use your public key to verify that it came from you.
 
-For more information on this, [this simple YouTube video](https://www.youtube.com/watch?v=GSIDS_lvRv4)
+For more information on this process, [this simple YouTube video](https://www.youtube.com/watch?v=GSIDS_lvRv4)
 will get you started.
 
 So to generate a pair of keys, you just need to run this command:
@@ -161,8 +162,8 @@ $ aletheia verify my_file.jpg
 ```
 
 Aletheia is smart enough to figure out where to find your public key so the
-end-user doesn't need to think about it.  The result is simple: Aletheia says
-one of two things:
+end-user doesn't need to think about it.  The result is black & white: Aletheia
+says one of two things:
 
 * This file came from `mywebsite.com`
 * This file's origin can't be determined
@@ -201,7 +202,7 @@ URL.  This URL should be using HTTPS.
 
 <p align="center">
   <img src="presentation/img/diagrams/sign-structure.png" alt="A typical file in two parts: header and body" /><br />
-  Aletheia pulls the body of the file out and generates a signature of it with your private key
+  A simple diagram of a typical file
 </p>
 
 Nearly all files look like this: two parts, a header and a body:
@@ -227,7 +228,7 @@ Importantly, what constitutes the "body" of a file can sometimes be hard to
 define.  In Aletheia, each file type has its own rules for defining this
 portion.  For example, MP3's use the output of an FFmpeg command that strips
 all header data, while JPEG files use Python's `.tobytes()` method.  As the
-library of supported files expands, each of these formats will be documented.
+library of supported files expands, each of these formats is documented.
 
 <p align="center">
   <img src="presentation/img/diagrams/sign-write.png" alt="Inserting the signature & URL into the header" /><br />
