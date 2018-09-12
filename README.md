@@ -201,27 +201,37 @@ can generate keys as well as support the following file formats:
    <tr>
       <td>HTML</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td></td>
    </tr>
    <tr>
       <td>Markdown</td>
       <td align="center">❌</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td></td>
    </tr>
    <tr>
       <td>ReStructuredText</td>
       <td align="center">❌</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td></td>
    </tr>
    <tr>
       <td>PDF</td>
       <td align="center">❌</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td></td>
    </tr>
    <tr>
-      <td>TAR</td>
+      <td>GZ</td>
       <td align="center">❌</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>BZ2</td>
+      <td align="center">❌</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>XZ</td>
+      <td align="center">❌</td>
+      <td></td>
    </tr>
 </table>
 
