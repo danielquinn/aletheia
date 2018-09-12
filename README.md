@@ -196,6 +196,11 @@ can generate keys as well as support the following file formats:
       <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
    </tr>
    <tr>
+      <td>AV1</td>
+      <td align="center">❌</td>
+      <td></td>
+   </tr>
+   <tr>
       <th colspan="3">Other</th>
    </tr>
    <tr>
