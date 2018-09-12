@@ -268,6 +268,29 @@
             <p>...but it's properly extensible</p>
           </section>
           <section>
+            <pre><code style="max-height: 9999px;">
+class AwesomeFile(File):
+
+    SUPPORTED_TYPES = ("mime/type",)
+
+    def get_raw_data(self) -> bytes:
+        """
+        Return the "meat" of the file (the blue part)
+        """
+
+    def sign(self, private_key, public_key_url: str) -> None:
+        """
+        Write to the header.
+        """
+
+    def verify(self) -> str:
+        """
+        Read from the header & call .verify_signature() to return
+        the origin domain name.
+        """
+            </code></pre>
+          </section>
+          <section>
             <h3>A wrapper command-line utility</h3>
             <pre><code>
   $ aletheia generate
