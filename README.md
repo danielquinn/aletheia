@@ -161,12 +161,12 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>GIF</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
       <td></td>
    </tr>
    <tr>
       <td>PNG</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
       <td></td>
    </tr>
    <tr>
@@ -247,7 +247,7 @@ can generate keys as well as support the following file formats:
 #### Support for additional formats.
 
 The lowest-hanging fruit are finished, so now the priorities are the other
-popular web formats like `gif`, `png`, and maybe `av1` -- assuming these
+popular formats like `pdf`, `markdown`, and maybe `av1` -- assuming these
 formats have a metadata layer into which we can include a signature.
 
 
