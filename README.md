@@ -105,7 +105,7 @@ URL.
 ### Sign a file
 
 ```bash
-$ aletheia sign file.jpg https://example.com/my-public-key.pub
+$ aletheia sign file.jpg example.com
 ```
 
 Here, the `aletheia` program:
@@ -157,17 +157,17 @@ can generate keys as well as support the following file formats:
    <tr>
       <td>JPEG</td>
       <td align="center">👍</td>
-      <td></td>
+      <td>Requires <a href="https://sno.phy.queensu.ca/~phil/exiftool/">Exiftool</a></td>
    </tr>
    <tr>
       <td>GIF</td>
       <td align="center">👍</td>
-      <td></td>
+      <td>Requires <a href="https://sno.phy.queensu.ca/~phil/exiftool/">Exiftool</a></td>
    </tr>
    <tr>
       <td>PNG</td>
       <td align="center">👍</td>
-      <td></td>
+      <td>Requires <a href="https://sno.phy.queensu.ca/~phil/exiftool/">Exiftool</a></td>
    </tr>
    <tr>
       <th colspan="3">Audio</th>
@@ -210,7 +210,7 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>Markdown</td>
-      <td align="center">❌</td>
+      <td align="center">👍</td>
       <td></td>
    </tr>
    <tr>
@@ -247,7 +247,7 @@ can generate keys as well as support the following file formats:
 #### Support for additional formats.
 
 The lowest-hanging fruit are finished, so now the priorities are the other
-popular formats like `pdf`, `markdown`, and maybe `av1` -- assuming these
+popular web formats like `pdf`, `gz`, and maybe `av1` -- assuming these
 formats have a metadata layer into which we can include a signature.
 
 
