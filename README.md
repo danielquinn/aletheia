@@ -175,7 +175,7 @@ can generate keys as well as support the following file formats:
    <tr>
       <td>MP3</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a></td>
    </tr>
    <tr>
       <th colspan="3">Video</th>
@@ -183,17 +183,17 @@ can generate keys as well as support the following file formats:
    <tr>
       <td>MKV</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a></td>
    </tr>
    <tr>
       <td>WEBM</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a></td>
    </tr>
    <tr>
       <td>MP4</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a>.</td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a></td>
    </tr>
    <tr>
       <td>AV1</td>
