@@ -1,4 +1,4 @@
-<p align="center"><img src="logo-light.png" alt="Aletheia" /></p>
+<img src="logo-light.png" alt="Aletheia" />
 
 [![Python3](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
@@ -188,7 +188,7 @@ can generate keys as well as support the following file formats:
    <tr>
       <td>WEBM</td>
       <td align="center">👍</td>
-      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a></td>
+      <td>Requires <a href="https://ffmpeg.org/">FFmpeg</a> to verify.  FFmpeg 3.4+ is required for signing.</td>
    </tr>
    <tr>
       <td>MP4</td>
@@ -215,6 +215,11 @@ can generate keys as well as support the following file formats:
    </tr>
    <tr>
       <td>ReStructuredText</td>
+      <td align="center">❌</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>JSON</td>
       <td align="center">❌</td>
       <td></td>
    </tr>
