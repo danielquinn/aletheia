@@ -1,4 +1,4 @@
-# Aletheia
+<p align="center"><img src="logo-light.png" alt="Aletheia" /></p>
 
 [![Python3](https://img.shields.io/pypi/pyversions/aletheia.svg)](https://pypi.org/project/aletheia/)
 
